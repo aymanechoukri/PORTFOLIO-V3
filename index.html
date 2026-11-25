@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>  
-    <script src="src/script.js"></script>
+    <script type="module" src="src/script.js"></script>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +15,7 @@
 <body>
     <header class="flex justify-between px-[20px] items-center py-[5px]">
         <a href="#profile"><img src="./public/image/Logo.png" alt="logo" class="w-[150px]"></a>
-        <nav class="flex justify-center items-center">
+        <nav class="flex justify-center items-center max-lg:hidden">
             <ul class="flex items-center gap-3">
                 <li>
                     <a href="#profile"
@@ -59,11 +59,92 @@
                     shadow-lg shadow-rose-950/30
                     transition-all duration-300
                     hover:border-rose-500 hover:shadow-rose-900/50
-                    hover:-translate-y-1 active:scale-95">
+                    hover:-translate-y-1 active:scale-95 max-lg:hidden">
 
                 <i class="fa-solid fa-file-arrow-down text-rose-500 text-lg"></i>
                 DOWNLOAD CV
         </a>
+
+         <nav id="menu" class="absolute right-0 top-0 z-50 h-screen w-1/2 border-l border-rose-900/30
+            bg-black/80 p-6 shadow-2xl shadow-rose-950/30 backdrop-blur-xl animation-to-left hidden">
+
+            <button
+            id="close"
+                type="button"
+                aria-label="Close menu"
+                class="absolute right-5 top-5 flex h-10 w-10 items-center justify-center
+                    rounded-xl border border-rose-800/50 bg-rose-950/20
+                    text-rose-500 transition-all duration-300
+                    hover:rotate-90 hover:border-rose-500 hover:bg-rose-900/30 hover:text-white">
+
+                <i class="fa-solid fa-xmark text-2xl"></i>
+            </button>
+
+                <ul class="flex flex-col gap-6 mt-12">
+
+                    <li>
+                        <a href="#profile"
+                        class="group flex items-center gap-3 text-sm font-semibold tracking-widest text-gray-300 transition duration-300 hover:text-rose-500">
+                            <span class="h-1.5 w-1.5 rounded-full bg-rose-700 transition group-hover:scale-150 group-hover:bg-rose-500"></span>
+                            PROFILE
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#projects"
+                        class="group flex items-center gap-3 text-sm font-semibold tracking-widest text-gray-300 transition duration-300 hover:text-rose-500">
+                            <span class="h-1.5 w-1.5 rounded-full bg-rose-700 transition group-hover:scale-150 group-hover:bg-rose-500"></span>
+                            PROJECTS
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#about"
+                        class="group flex items-center gap-3 text-sm font-semibold tracking-widest text-gray-300 transition duration-300 hover:text-rose-500">
+                            <span class="h-1.5 w-1.5 rounded-full bg-rose-700 transition group-hover:scale-150 group-hover:bg-rose-500"></span>
+                            ABOUT
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#contact"
+                        class="group flex items-center gap-3 text-sm font-semibold tracking-widest text-gray-300 transition duration-300 hover:text-rose-500">
+                            <span class="h-1.5 w-1.5 rounded-full bg-rose-700 transition group-hover:scale-150 group-hover:bg-rose-500"></span>
+                            CONTACT
+                        </a>
+                    </li>
+
+                </ul>
+
+                <div class="my-8 h-px w-full bg-gradient-to-r from-transparent via-rose-800/60 to-transparent"></div>
+
+                <a href="./public/image/Aymane_Chokri_CV (1).pdf.pdf" download
+                class="flex w-full items-center justify-center gap-3 rounded-xl border border-rose-700/70
+                        bg-gradient-to-r from-rose-950 to-black px-4 py-3
+                        text-xs font-bold tracking-widest text-white
+                        shadow-lg shadow-rose-950/30
+                        transition-all duration-300
+                        hover:-translate-y-1 hover:border-rose-500 hover:shadow-rose-900/50
+                        active:scale-95">
+
+                    <i class="fa-solid fa-file-arrow-down text-rose-500 text-lg"></i>
+                    DOWNLOAD CV
+                </a>
+
+         </nav>
+         <button
+         id="opne"
+            type="button"
+            aria-label="Open menu"
+            class="flex h-11 w-11 items-center justify-center
+                rounded-xl border border-rose-800/50
+                bg-black/50 text-white backdrop-blur-md
+                transition-all duration-300
+                hover:border-rose-500 hover:bg-rose-950/40
+                hover:text-rose-500 active:scale-95 lg:hidden">
+
+            <i class="fa-solid fa-bars-staggered text-xl"></i>
+        </button>
     </header>
 </body>
 </html>

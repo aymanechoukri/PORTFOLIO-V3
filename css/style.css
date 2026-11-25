@@ -5,3 +5,18 @@ body {
 h1, h2, h3, button {
   font-family: 'Space Grotesk', sans-serif;
 }
+
+.animation-to-left {
+    animation: left 0.3s linear forwards;
+}
+
+@keyframes left {
+    from {
+        transform: translateX(200px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
