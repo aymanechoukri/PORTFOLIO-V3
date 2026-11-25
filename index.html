@@ -13,7 +13,7 @@
     <title>PORTFOLIO | CHOKRI AYMANE</title>
 </head>
 <body>
-    <header class="flex justify-between px-[20px] items-center py-[5px]">
+    <header class="flex fixed w-full top-0 justify-between px-[20px] items-center py-[5px]">
         <a href="#profile"><img src="./public/image/Logo.png" alt="logo" class="w-[150px]"></a>
         <nav class="flex justify-center items-center max-lg:hidden">
             <ul class="flex items-center gap-3">
@@ -146,5 +146,64 @@
             <i class="fa-solid fa-bars-staggered text-xl"></i>
         </button>
     </header>
+
+    <section class="bg-[url('./public/image/bg-hero.png')] bg-cover bg-center bg-no-repeat min-h-screen">
+        <article class="flex flex-col gap-6 justify-end h-[88vh] ml-[200px]">
+            <h1 class="text-white text-8xl font-bold">AYMANE <span class="text-red-600">CHOKRI |</span></h1>
+            <p class="text-white text-5xl font-bold">Full-Stack Developer</p>
+            <p class="font-bold text-gray-500">I build modern, performant and user-centered web<br>application, from idea to deployment</p>
+            <div class="flex flex-wrap items-center gap-4">
+
+                <a href="#projects"
+                class="group inline-flex items-center gap-3 rounded-xl
+                        bg-gradient-to-r from-rose-700 to-rose-950
+                        px-7 py-3.5 font-semibold tracking-wide text-white
+                        shadow-lg shadow-rose-950/40
+                        transition-all duration-300
+                        hover:-translate-y-1 hover:shadow-rose-700/30
+                        active:scale-95">
+
+                    <i class="fa-solid fa-rocket transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"></i>
+                    View Projects
+                    <i class="fa-solid fa-arrow-right text-sm transition-transform duration-300 group-hover:translate-x-1"></i>
+                </a>
+
+                <a href="#about"
+                class="group inline-flex items-center gap-3 rounded-xl
+                        border border-rose-700/70 bg-black/40
+                        px-7 py-3.5 font-semibold tracking-wide text-white
+                        backdrop-blur-md
+                        transition-all duration-300
+                        hover:-translate-y-1 hover:border-rose-500 hover:bg-rose-950/30
+                        active:scale-95">
+
+                    <i class="fa-regular fa-circle-play text-rose-500 transition-transform duration-300 group-hover:scale-110"></i>
+                    About Me
+                </a>
+
+            </div>
+            <div class="flex items-center gap-4">
+                <a
+                    href="https://github.com/aymanechoukri"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub"
+                    class="text-2xl text-white hover:text-[#E5092A] transition-all duration-300 hover:scale-110"
+                >
+                    <i class="fa-brands fa-github"></i>
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/in/aymane-chokri-8750a6321/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                    class="text-2xl text-white hover:text-[#E5092A] transition-all duration-300 hover:scale-110"
+                >
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+            </div>
+        </article>
+    </section>
 </body>
 </html>
