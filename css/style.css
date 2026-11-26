@@ -101,3 +101,9 @@ h1, h2, h3, button {
         opacity: 1;
     }
 }
+
+.hero-background {
+    -webkit-mask-image: linear-gradient(to top, transparent 1%, black 20%);
+    mask-image: linear-gradient(to top, transparent 1%, black 20%);
+    z-index: -999;
+}
