@@ -12,11 +12,11 @@ close.addEventListener("click", () => {
     closeMenu(menu)
 });
 
-
-document.body.style.overflow = "hidden";
-
+document.body.style.overflowX = "hidden";
 setTimeout(() => {
     document.body.style.overflow = "auto";
     introBackground.style.display = "none";
-}, 5000)
+}, 5000);
+
+
 
