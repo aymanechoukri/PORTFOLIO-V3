@@ -23,8 +23,10 @@ export function renderProjects(showProjects = projects) {
         fregma.append(emptyMessage);
         return fregma;
     }
-    showProjects.forEach(project => {
+    showProjects.forEach((project, index) => {
         const article = document.createElement("article");
+        article.setAttribute("data-aos", "fade-left");
+        article.setAttribute("data-aos-delay", index * 400);
         article.innerHTML = "";
         article.classList.add("group", "w-full", "max-w-[500px]", "overflow-hidden", "rounded-2xl" ,"border", "border-rose-900/40", "bg-gradient-to-br", "from-[#160609]", "via-[#100406]", "to-black", "shadow-xl", "shadow-rose-950/20", "transition-all", "duration-500", "hover:-translate-y-2", "hover:border-rose-600/60", "hover:shadow-2xl", "hover:shadow-rose-900/30");
         article.innerHTML += ` <div class="relative h-[250px] overflow-hidden">
