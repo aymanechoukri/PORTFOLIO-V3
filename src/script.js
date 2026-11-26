@@ -1,6 +1,11 @@
 import { closeMenu, opneMenu } from "./burgerMenu.js";
 import { renderProjects, searchAndFliter } from "./prijects.js";
 
+AOS.init({
+    once: true,
+    duration: 900
+});
+
 const menu = document.querySelector("#menu")
 const close = document.querySelector("#close")
 const opne = document.querySelector("#opne");
