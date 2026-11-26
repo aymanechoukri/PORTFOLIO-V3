@@ -1,9 +1,31 @@
 import { projects } from "./data.js";
 
-export function renderProjects() {
+export function renderProjects(showProjects = projects) {
     const fregma = document.createDocumentFragment()
-    projects.forEach(project => {
+
+    if (showProjects.length === 0) {
+        const emptyMessage = document.createElement("div");
+
+        emptyMessage.className = "col-span-full flex flex-col items-center justify-center py-16 text-center";
+
+        emptyMessage.innerHTML = `
+            <i class="fa-solid fa-folder-open mb-4 text-4xl text-rose-500/60"></i>
+
+            <h3 class="text-xl font-bold text-white">
+                No Projects Found
+            </h3>
+
+            <p class="mt-2 text-sm text-gray-400">
+                Try changing your search or category filter.
+            </p>
+        `;
+
+        fregma.append(emptyMessage);
+        return fregma;
+    }
+    showProjects.forEach(project => {
         const article = document.createElement("article");
+        article.innerHTML = "";
         article.classList.add("group", "w-full", "max-w-[500px]", "overflow-hidden", "rounded-2xl" ,"border", "border-rose-900/40", "bg-gradient-to-br", "from-[#160609]", "via-[#100406]", "to-black", "shadow-xl", "shadow-rose-950/20", "transition-all", "duration-500", "hover:-translate-y-2", "hover:border-rose-600/60", "hover:shadow-2xl", "hover:shadow-rose-900/30");
         article.innerHTML += ` <div class="relative h-[250px] overflow-hidden">
                 <img
@@ -54,7 +76,19 @@ export function renderProjects() {
                 </div>
 
             </div>`;
+
             fregma.append(article);
     })
     return fregma;
+}
+
+
+export function searchAndFliter(search, filters, group) {
+    const reusltSearchAndFilter = projects.filter(project => {
+        const searchs = project.title.toLowerCase().includes(search.toLowerCase());
+        const filt = filters === "All" || project.category === filters;
+        return searchs && filt
+    });
+
+    group.replaceChildren(renderProjects(reusltSearchAndFilter))
 }

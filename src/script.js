@@ -1,11 +1,15 @@
 import { closeMenu, opneMenu } from "./burgerMenu.js";
-import { renderProjects } from "./prijects.js";
+import { renderProjects, searchAndFliter } from "./prijects.js";
 
 const menu = document.querySelector("#menu")
 const close = document.querySelector("#close")
 const opne = document.querySelector("#opne");
 const introBackground = document.querySelector(".intro-background");
 const group = document.querySelector("#group");
+
+const search = document.querySelector("#search");
+const category = document.querySelector("#category");
+
 
 opne.addEventListener("click", () => {
     opneMenu(menu)
@@ -21,5 +25,16 @@ setTimeout(() => {
 }, 5000);
 
 group.append(renderProjects());
-console.log(group)
-console.log(renderProjects())
+
+let searchValue = "";
+let categoryValue = "All";
+
+search.addEventListener("input", (e) => {
+    searchValue = e.target.value;
+    searchAndFliter(searchValue, categoryValue, group);
+})
+
+category.addEventListener("change", (e) => {
+    categoryValue = e.target.value;
+    searchAndFliter(searchValue, categoryValue, group);
+})
