@@ -271,20 +271,7 @@
     <div class="h-[5vh]"></div>
 
     <section id="about" class="p-20 flex gap-6 relative overflow-hidden rounded-3xl">
-            <div class="pointer-events-none absolute -left-32 -top-32 h-96 w-96 rounded-full bg-[#E5092A]/20 blur-[120px]"></div>
-
-            <div class="pointer-events-none absolute -right-32 -top-20 h-80 w-80 rounded-full bg-[#650014]/35 blur-[110px]"></div>
-
-            <div class="pointer-events-none absolute -left-20 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-rose-700/10 blur-[100px]"></div>
-
-            <div class="pointer-events-none absolute -right-20 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-[#E5092A]/10 blur-[100px]"></div>
-
-            <div class="pointer-events-none absolute -bottom-32 -left-20 h-80 w-80 rounded-full bg-[#650014]/35 blur-[120px]"></div>
-
-            <div class="pointer-events-none absolute -bottom-40 -right-32 h-96 w-96 rounded-full bg-[#E5092A]/15 blur-[130px]"></div>
-
-            <div class="pointer-events-none absolute -bottom-48 left-1/2 h-72 w-96 -translate-x-1/2 rounded-full bg-rose-900/20 blur-[120px]"></div>
-                    <article data-aos="fade-right" class="relative overflow-hidden rounded-3xl border border-rose-900/40 bg-gradient-to-br from-[#160609] via-[#100406] to-black p-6 shadow-2xl shadow-rose-950/20 md:p-10">
+        <article data-aos="fade-right" class="relative overflow-hidden rounded-3xl border border-rose-900/40 bg-gradient-to-br from-[#160609] via-[#100406] to-black p-6 shadow-2xl shadow-rose-950/20 md:p-10">
 
             <div class="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-rose-600/10 blur-[100px]"></div>
 
@@ -401,6 +388,119 @@
             </div>
 
         </article>
+
+    </section>
+
+    <div class="h-[5vh]"></div>
+
+    <section id="contact" class="p-20 bg-[url('./public/image/Android.png')] bg-cover bg-no-repeat bg-center min-h-screen background2 grid grid-cols-2 gap-6">
+        
+        <article class="flex items-end ml-[130px]">
+            <nav class="rounded-2xl border border-rose-900/40 bg-gradient-to-br from-[#160609] via-[#100406] to-black p-3 shadow-xl shadow-rose-950/30">
+                <ul class="flex items-center gap-3">
+
+                    <li>
+                        <a href="https://github.com/aymanechoukri"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="group flex items-center gap-2 rounded-xl border border-transparent px-5 py-3 text-sm font-semibold text-gray-400 transition-all duration-300 hover:border-rose-600/40 hover:bg-rose-950/30 hover:text-rose-400 hover:shadow-lg hover:shadow-rose-950/30">
+                            <i class="fa-brands fa-github text-lg"></i>
+                            GitHub
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.linkedin.com/in/aymane-chokri-8750a6321/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="flex items-center gap-2 rounded-xl border border-transparent px-5 py-3 text-sm font-semibold text-gray-400 transition-all duration-300 hover:border-rose-600/40 hover:bg-rose-950/30 hover:text-rose-400 hover:shadow-lg hover:shadow-rose-950/30">
+                            <i class="fa-brands fa-linkedin text-lg"></i>
+                            LinkedIn
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="mailto:aymanechokri2000@gmail.com"
+                        class="flex items-center gap-2 rounded-xl border border-transparent px-5 py-3 text-sm font-semibold text-gray-400 transition-all duration-300 hover:border-rose-600/40 hover:bg-rose-950/30 hover:text-rose-400 hover:shadow-lg hover:shadow-rose-950/30">
+                            <i class="fa-solid fa-envelope text-lg"></i>
+                            Email
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="tel:+212714063566"
+                        class="flex items-center gap-2 rounded-xl border border-transparent px-5 py-3 text-sm font-semibold text-gray-400 transition-all duration-300 hover:border-rose-600/40 hover:bg-rose-950/30 hover:text-rose-400 hover:shadow-lg hover:shadow-rose-950/30">
+                            <i class="fa-solid fa-phone text-lg"></i>
+                            Number
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
+        </article>
+
+
+        <form
+            action="https://formspree.io/f/mqpqozgd"
+            method="POST"
+            id="submit"
+            class="mt-[200px] flex flex-col gap-6 rounded-3xl border-2 border-rose-950/20 bg-black/50 p-6 shadow-2xl shadow-rose-700/30 backdrop-blur-[5px] md:p-8"
+        >
+            <h2 class="mb-2 flex items-center gap-3 text-2xl font-bold uppercase tracking-wider text-white md:text-3xl">
+                <i class="fa-solid fa-envelope text-rose-500"></i>
+                <span>Contact Me</span>
+            </h2>
+
+            <div class="flex flex-col gap-3">
+                <label for="fullName" class="text-sm font-semibold text-rose-100">
+                    Full Name
+                </label>
+                <input
+                    type="text"
+                    name="fullName"
+                    id="fullName"
+                    placeholder="Enter your full name"
+                    class="rounded-xl border-b-2 border-rose-600 bg-transparent px-5 py-4 text-white outline-none transition-all duration-500 placeholder:text-gray-500 focus:border-rose-400 focus:shadow-lg focus:shadow-rose-700/30"
+                    required
+                >
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <label for="email" class="text-sm font-semibold text-rose-100">
+                    Email Address
+                </label>
+                <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="example@email.com"
+                    class="rounded-xl border-b-2 border-rose-600 bg-transparent px-5 py-4 text-white outline-none transition-all duration-500 placeholder:text-gray-500 focus:border-rose-400 focus:shadow-lg focus:shadow-rose-700/30"
+                    required
+                >
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <label for="message" class="text-sm font-semibold text-rose-100">
+                    Message
+                </label>
+                <textarea
+                    name="message"
+                    id="message"
+                    rows="5"
+                    placeholder="Write your message here..."
+                    class="resize-none rounded-xl border-b-2 border-rose-600 bg-transparent px-5 py-4 text-white outline-none transition-all duration-500 placeholder:text-gray-500 focus:border-rose-400 focus:shadow-lg focus:shadow-rose-700/30"
+                    required
+                ></textarea>
+            </div>
+
+            <button
+                type="submit"
+                class="mt-2 flex items-center justify-center gap-3 rounded-xl bg-rose-700 px-6 py-4 font-bold uppercase tracking-wider text-white shadow-lg shadow-rose-700/30 transition-all duration-300 hover:-translate-y-1 hover:bg-rose-600 hover:shadow-rose-600/50 active:translate-y-0"
+            >
+                <span>Send Message</span>
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
+        </form>
 
     </section>
 </body>

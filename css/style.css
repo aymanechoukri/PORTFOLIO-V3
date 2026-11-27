@@ -107,3 +107,9 @@ h1, h2, h3, button {
     mask-image: linear-gradient(to top, transparent 1%, black 20%);
     z-index: -999;
 }
+
+.background2 {
+    -webkit-mask-image: linear-gradient(to bottom, transparent 1%, black 20%);
+    mask-image: linear-gradient(to bottom, transparent 1%, black 20%);
+    z-index: -999;
+}
