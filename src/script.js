@@ -7,6 +7,20 @@ AOS.init({
     duration: 900
 });
 
+const lenis = new Lenis({
+    duration: 1.2,
+    smoothWheel: true,
+    wheelMultiplier: 0.8,
+});
+
+function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+
+
 const menu = document.querySelector("#menu")
 const close = document.querySelector("#close")
 const opne = document.querySelector("#opne");
@@ -73,6 +87,16 @@ submit.addEventListener("submit", async (e) => {
     const isValid = validationForm(valueName, valueEmail, valueMessage);
     console.log(isValid)
     if (!isValid) {
+        Toastify({
+            text: "Please check your inputs!",
+            duration: 3000,
+            gravity: "top",
+            position: "right",
+            style: {
+                background: "#E5092A",
+                borderRadius: "12px"
+            }
+        }).showToast();
         return;
     }
 
@@ -84,7 +108,27 @@ submit.addEventListener("submit", async (e) => {
     });
 
     if (!res.ok) {
+         Toastify({
+            text: "Something went wrong. Try again!",
+            duration: 3000,
+            gravity: "top",
+            position: "right",
+            style: {
+                background: "#E5092A",
+                borderRadius: "12px"
+            }
+        }).showToast();
         throw new Error("In Valid: ", res.status);
     }
+     Toastify({
+                text: "Message sent successfully!",
+                duration: 3000,
+                gravity: "top",
+                position: "right",
+                style: {
+                    background: "#16A34A",
+                    borderRadius: "12px"
+                }
+            }).showToast();
     submit.reset();
 })
