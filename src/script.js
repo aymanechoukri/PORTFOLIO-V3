@@ -7,6 +7,19 @@ AOS.init({
     duration: 900
 });
 
+const lenis = new Lenis({
+    duration: 1.2,
+    smoothWheel: true,
+    wheelMultiplier: 0.8,
+});
+
+function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+
 
 const menu = document.querySelector("#menu")
 const close = document.querySelector("#close")

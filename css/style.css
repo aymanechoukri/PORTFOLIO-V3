@@ -6,6 +6,10 @@ h1, h2, h3, button {
   font-family: 'Space Grotesk', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .animation-to-left {
     animation: left 0.3s linear forwards;
 }
