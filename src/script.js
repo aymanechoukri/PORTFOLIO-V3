@@ -171,3 +171,23 @@ document.querySelectorAll("a, button").forEach((element) => {
         cursor.classList.remove("active");
     });
 });
+
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+        header.classList.add(
+            "bg-black/30",
+            "backdrop-blur-md",
+            "border-b",
+            "border-rose-900/30"
+        );
+    } else {
+        header.classList.remove(
+            "bg-black/30",
+            "backdrop-blur-md",
+            "border-b",
+            "border-rose-900/30"
+        );
+    }
+});
