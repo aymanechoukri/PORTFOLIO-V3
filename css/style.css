@@ -117,3 +117,43 @@ html {
     mask-image: linear-gradient(to bottom, transparent 1%, black 20%);
     z-index: -999;
 }
+
+* {
+    cursor: none;
+}
+
+.cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 35px;
+    height: 35px;
+    border: 2px solid #E5092A;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99999;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 15px #E5092A,
+                inset 0 0 10px #E5092A40;
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
+.cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    background: #E5092A;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 100000;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 12px #E5092A;
+}
+
+.cursor.active {
+    width: 55px;
+    height: 55px;
+    background: #E5092A20;
+}
