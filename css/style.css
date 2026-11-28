@@ -8,6 +8,11 @@ h1, h2, h3, button {
 
 html {
     scroll-behavior: smooth;
+    overflow-x: clip;
+}
+
+body {
+    overflow-x: clip;
 }
 
 .animation-to-left {
@@ -35,37 +40,31 @@ html {
     100% { opacity: 0; visibility: hidden; background-color: transparent; }
 }
 
-.intro-left {
-    animation: intro-left 1.2s ease-in;
-}
-
-@keyframes intro-left {
-    from { transform: translateX(200px); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
+.intro-left,
+.intro-right,
+.clac-animation {
+    animation: hero-content-reveal 1s ease-out both;
 }
 
 .intro-right {
-    animation: intro-right 3s ease-in;
+    animation-delay: 180ms;
 }
 
-@keyframes intro-right {
-    0% { transform: translateX(-500px); opacity: 0; }
-    25% { transform: translateX(-400px); opacity: 0; }
-    75%, 100% { transform: translateX(0); opacity: 1; }
-}
-
-.clac-animation {
-    animation: content-reveal 3.5s ease-in;
-}
-
-@keyframes content-reveal {
-    from { scale: 0.8; opacity: 0; }
-    to { scale: 1; opacity: 1; }
+@keyframes hero-content-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .hero-background {
     -webkit-mask-image: linear-gradient(to top, transparent 1%, black 20%);
     mask-image: linear-gradient(to top, transparent 1%, black 20%);
+    overflow: clip;
 }
 
 .background2 {
