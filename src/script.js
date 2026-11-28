@@ -132,3 +132,62 @@ submit.addEventListener("submit", async (e) => {
             }).showToast();
     submit.reset();
 })
+
+
+const cursor = document.querySelector(".cursor");
+const dot = document.querySelector(".cursor-dot");
+
+let mouseX = 0;
+let mouseY = 0;
+let cursorX = 0;
+let cursorY = 0;
+
+document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
+    dot.style.left = `${mouseX}px`;
+    dot.style.top = `${mouseY}px`;
+});
+
+function animateCursor() {
+    cursorX += (mouseX - cursorX) * 0.15;
+    cursorY += (mouseY - cursorY) * 0.15;
+
+    cursor.style.left = `${cursorX}px`;
+    cursor.style.top = `${cursorY}px`;
+
+    requestAnimationFrame(animateCursor);
+}
+
+animateCursor();
+
+document.querySelectorAll("a, button").forEach((element) => {
+    element.addEventListener("mouseenter", () => {
+        cursor.classList.add("active");
+    });
+
+    element.addEventListener("mouseleave", () => {
+        cursor.classList.remove("active");
+    });
+});
+
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+        header.classList.add(
+            "bg-black/30",
+            "backdrop-blur-md",
+            "border-b",
+            "border-rose-900/30"
+        );
+    } else {
+        header.classList.remove(
+            "bg-black/30",
+            "backdrop-blur-md",
+            "border-b",
+            "border-rose-900/30"
+        );
+    }
+});
