@@ -1,512 +1,785 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>  
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <script type="module" src="src/script.js"></script>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <title>PORTFOLIO | CHOKRI AYMANE</title>
-</head>
-<body class="text-white">
-    <header class="flex fixed w-full top-0 justify-between px-[20px] items-center py-[5px] z-[999]">
-        <a href="#profile"><img src="./public/image/Logo.png" alt="logo" loading="lazy" class="w-[150px]"></a>
-        <nav class="flex justify-center items-center max-lg:hidden">
-            <ul class="flex items-center gap-3">
-                <li>
-                    <a href="#profile"
-                    class="group relative px-5 py-3 text-sm font-semibold tracking-wider text-gray-300 transition-all duration-300 hover:text-white">
-                        PROFILE
-                        <span class="absolute bottom-0 left-1/2 h-[2px] w-0 -translate-x-1/2 bg-rose-600 transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                </li>
+  </head>
+  <body class="text-white">
+    <header
+      class="flex fixed w-full top-0 justify-between px-[20px] items-center py-[5px] z-[999]"
+    >
+      <a href="#profile"
+        ><img
+          src="./public/image/Logo.png"
+          alt="logo"
+          loading="lazy"
+          class="w-[150px]"
+      /></a>
+      <nav class="flex justify-center items-center max-lg:hidden">
+        <ul class="flex items-center gap-3">
+          <li>
+            <a
+              href="#profile"
+              class="group relative px-5 py-3 text-sm font-semibold tracking-wider text-gray-300 transition-all duration-300 hover:text-white"
+            >
+              PROFILE
+              <span
+                class="absolute bottom-0 left-1/2 h-[2px] w-0 -translate-x-1/2 bg-rose-600 transition-all duration-300 group-hover:w-full"
+              ></span>
+            </a>
+          </li>
 
-                <li>
-                    <a href="#projects"
-                    class="group relative px-5 py-3 text-sm font-semibold tracking-wider text-gray-300 transition-all duration-300 hover:text-white">
-                        PROJECTS
-                        <span class="absolute bottom-0 left-1/2 h-[2px] w-0 -translate-x-1/2 bg-rose-600 transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                </li>
+          <li>
+            <a
+              href="#projects"
+              class="group relative px-5 py-3 text-sm font-semibold tracking-wider text-gray-300 transition-all duration-300 hover:text-white"
+            >
+              PROJECTS
+              <span
+                class="absolute bottom-0 left-1/2 h-[2px] w-0 -translate-x-1/2 bg-rose-600 transition-all duration-300 group-hover:w-full"
+              ></span>
+            </a>
+          </li>
 
-                <li>
-                    <a href="#about"
-                    class="group relative px-5 py-3 text-sm font-semibold tracking-wider text-gray-300 transition-all duration-300 hover:text-white">
-                        ABOUT
-                        <span class="absolute bottom-0 left-1/2 h-[2px] w-0 -translate-x-1/2 bg-rose-600 transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                </li>
+          <li>
+            <a
+              href="#about"
+              class="group relative px-5 py-3 text-sm font-semibold tracking-wider text-gray-300 transition-all duration-300 hover:text-white"
+            >
+              ABOUT
+              <span
+                class="absolute bottom-0 left-1/2 h-[2px] w-0 -translate-x-1/2 bg-rose-600 transition-all duration-300 group-hover:w-full"
+              ></span>
+            </a>
+          </li>
 
-                <li>
-                    <a href="#contact"
-                    class="group relative px-5 py-3 text-sm font-semibold tracking-wider text-gray-300 transition-all duration-300 hover:text-white">
-                        CONTACT
-                        <span class="absolute bottom-0 left-1/2 h-[2px] w-0 -translate-x-1/2 bg-rose-600 transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+          <li>
+            <a
+              href="#contact"
+              class="group relative px-5 py-3 text-sm font-semibold tracking-wider text-gray-300 transition-all duration-300 hover:text-white"
+            >
+              CONTACT
+              <span
+                class="absolute bottom-0 left-1/2 h-[2px] w-0 -translate-x-1/2 bg-rose-600 transition-all duration-300 group-hover:w-full"
+              ></span>
+            </a>
+          </li>
+        </ul>
+      </nav>
 
-        <a href="./public/image/Aymane_Chokri_CV (1).pdf.pdf" download
-            class="inline-flex items-center gap-3 px-6 py-3
-                    rounded-xl border border-rose-700
-                    bg-gradient-to-r from-rose-950 to-black
-                    text-white font-semibold tracking-wider
-                    shadow-lg shadow-rose-950/30
-                    transition-all duration-300
-                    hover:border-rose-500 hover:shadow-rose-900/50
-                    hover:-translate-y-1 active:scale-95 max-lg:hidden">
+      <a
+        href="./public/image/Aymane_Chokri_CV (1).pdf.pdf"
+        download
+        class="inline-flex items-center gap-3 px-6 py-3 rounded-xl border border-rose-700 bg-gradient-to-r from-rose-950 to-black text-white font-semibold tracking-wider shadow-lg shadow-rose-950/30 transition-all duration-300 hover:border-rose-500 hover:shadow-rose-900/50 hover:-translate-y-1 active:scale-95 max-lg:hidden"
+      >
+        <i class="fa-solid fa-file-arrow-down text-rose-500 text-lg"></i>
+        DOWNLOAD CV
+      </a>
 
-                <i class="fa-solid fa-file-arrow-down text-rose-500 text-lg"></i>
-                DOWNLOAD CV
-        </a>
-
-         <nav id="menu" class="absolute right-0 top-0 z-50 h-screen w-1/2 border-l border-rose-900/30
-            bg-black/80 p-6 shadow-2xl shadow-rose-950/30 backdrop-blur-xl animation-to-left hidden">
-
-            <button
-            id="close"
-                type="button"
-                aria-label="Close menu"
-                class="absolute right-5 top-5 flex h-10 w-10 items-center justify-center
-                    rounded-xl border border-rose-800/50 bg-rose-950/20
-                    text-rose-500 transition-all duration-300
-                    hover:rotate-90 hover:border-rose-500 hover:bg-rose-900/30 hover:text-white">
-
-                <i class="fa-solid fa-xmark text-2xl"></i>
-            </button>
-
-                <ul class="flex flex-col gap-6 mt-12">
-
-                    <li>
-                        <a href="#profile"
-                        class="group flex items-center gap-3 text-sm font-semibold tracking-widest text-gray-300 transition duration-300 hover:text-rose-500">
-                            <span class="h-1.5 w-1.5 rounded-full bg-rose-700 transition group-hover:scale-150 group-hover:bg-rose-500"></span>
-                            PROFILE
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#projects"
-                        class="group flex items-center gap-3 text-sm font-semibold tracking-widest text-gray-300 transition duration-300 hover:text-rose-500">
-                            <span class="h-1.5 w-1.5 rounded-full bg-rose-700 transition group-hover:scale-150 group-hover:bg-rose-500"></span>
-                            PROJECTS
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#about"
-                        class="group flex items-center gap-3 text-sm font-semibold tracking-widest text-gray-300 transition duration-300 hover:text-rose-500">
-                            <span class="h-1.5 w-1.5 rounded-full bg-rose-700 transition group-hover:scale-150 group-hover:bg-rose-500"></span>
-                            ABOUT
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#contact"
-                        class="group flex items-center gap-3 text-sm font-semibold tracking-widest text-gray-300 transition duration-300 hover:text-rose-500">
-                            <span class="h-1.5 w-1.5 rounded-full bg-rose-700 transition group-hover:scale-150 group-hover:bg-rose-500"></span>
-                            CONTACT
-                        </a>
-                    </li>
-
-                </ul>
-
-                <div class="my-8 h-px w-full bg-gradient-to-r from-transparent via-rose-800/60 to-transparent"></div>
-
-                <a href="./public/image/Aymane_Chokri_CV (1).pdf.pdf" download
-                class="flex w-full items-center justify-center gap-3 rounded-xl border border-rose-700/70
-                        bg-gradient-to-r from-rose-950 to-black px-4 py-3
-                        text-xs font-bold tracking-widest text-white
-                        shadow-lg shadow-rose-950/30
-                        transition-all duration-300
-                        hover:-translate-y-1 hover:border-rose-500 hover:shadow-rose-900/50
-                        active:scale-95">
-
-                    <i class="fa-solid fa-file-arrow-down text-rose-500 text-lg"></i>
-                    DOWNLOAD CV
-                </a>
-
-         </nav>
-         <button
-         id="opne"
-            type="button"
-            aria-label="Open menu"
-            class="flex h-11 w-11 items-center justify-center
-                rounded-xl border border-rose-800/50
-                bg-black/50 text-white backdrop-blur-md
-                transition-all duration-300
-                hover:border-rose-500 hover:bg-rose-950/40
-                hover:text-rose-500 active:scale-95 lg:hidden">
-
-            <i class="fa-solid fa-bars-staggered text-xl"></i>
+      <nav
+        id="menu"
+        class="absolute right-0 top-0 z-50 h-screen w-1/2 border-l border-rose-900/30 bg-black/80 p-6 shadow-2xl shadow-rose-950/30 backdrop-blur-xl animation-to-left hidden"
+      >
+        <button
+          id="close"
+          type="button"
+          aria-label="Close menu"
+          class="absolute right-5 top-5 flex h-10 w-10 items-center justify-center rounded-xl border border-rose-800/50 bg-rose-950/20 text-rose-500 transition-all duration-300 hover:rotate-90 hover:border-rose-500 hover:bg-rose-900/30 hover:text-white"
+        >
+          <i class="fa-solid fa-xmark text-2xl"></i>
         </button>
+
+        <ul class="flex flex-col gap-6 mt-12">
+          <li>
+            <a
+              href="#profile"
+              class="group flex items-center gap-3 text-sm font-semibold tracking-widest text-gray-300 transition duration-300 hover:text-rose-500"
+            >
+              <span
+                class="h-1.5 w-1.5 rounded-full bg-rose-700 transition group-hover:scale-150 group-hover:bg-rose-500"
+              ></span>
+              PROFILE
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#projects"
+              class="group flex items-center gap-3 text-sm font-semibold tracking-widest text-gray-300 transition duration-300 hover:text-rose-500"
+            >
+              <span
+                class="h-1.5 w-1.5 rounded-full bg-rose-700 transition group-hover:scale-150 group-hover:bg-rose-500"
+              ></span>
+              PROJECTS
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#about"
+              class="group flex items-center gap-3 text-sm font-semibold tracking-widest text-gray-300 transition duration-300 hover:text-rose-500"
+            >
+              <span
+                class="h-1.5 w-1.5 rounded-full bg-rose-700 transition group-hover:scale-150 group-hover:bg-rose-500"
+              ></span>
+              ABOUT
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#contact"
+              class="group flex items-center gap-3 text-sm font-semibold tracking-widest text-gray-300 transition duration-300 hover:text-rose-500"
+            >
+              <span
+                class="h-1.5 w-1.5 rounded-full bg-rose-700 transition group-hover:scale-150 group-hover:bg-rose-500"
+              ></span>
+              CONTACT
+            </a>
+          </li>
+        </ul>
+
+        <div
+          class="my-8 h-px w-full bg-gradient-to-r from-transparent via-rose-800/60 to-transparent"
+        ></div>
+
+        <a
+          href="./public/image/Aymane_Chokri_CV (1).pdf.pdf"
+          download
+          class="flex w-full items-center justify-center gap-3 rounded-xl border border-rose-700/70 bg-gradient-to-r from-rose-950 to-black px-4 py-3 text-xs font-bold tracking-widest text-white shadow-lg shadow-rose-950/30 transition-all duration-300 hover:-translate-y-1 hover:border-rose-500 hover:shadow-rose-900/50 active:scale-95"
+        >
+          <i class="fa-solid fa-file-arrow-down text-rose-500 text-lg"></i>
+          DOWNLOAD CV
+        </a>
+      </nav>
+      <button
+        id="opne"
+        type="button"
+        aria-label="Open menu"
+        class="flex h-11 w-11 items-center justify-center rounded-xl border border-rose-800/50 bg-black/50 text-white backdrop-blur-md transition-all duration-300 hover:border-rose-500 hover:bg-rose-950/40 hover:text-rose-500 active:scale-95 lg:hidden"
+      >
+        <i class="fa-solid fa-bars-staggered text-xl"></i>
+      </button>
     </header>
 
     <section>
-        <div class="intro-background">
+      <div class="intro-background"></div>
+    </section>
+
+    <section
+      data-aos="fade-up"
+      id="profile"
+      class="hero-background bg-[url('./public/image/background-hero.png')] bg-cover bg-center bg-no-repeat min-h-screen flex gap-10"
+    >
+      <article
+        class="flex flex-col gap-6 justify-end h-[88vh] ml-[150px] w-[60%] clac-animation"
+      >
+        <h1 class="text-white text-8xl font-bold">
+          AYMANE <span class="text-red-600">CHOKRI |</span>
+        </h1>
+        <p class="text-white text-5xl font-bold">Full-Stack Developer</p>
+        <p class="font-bold text-gray-500">
+          I build modern, performant and user-centered web<br />application,
+          from idea to deployment
+        </p>
+        <div class="flex flex-wrap items-center gap-4">
+          <a
+            href="#projects"
+            class="group inline-flex items-center gap-3 rounded-xl bg-gradient-to-r from-rose-700 to-rose-950 px-7 py-3.5 font-semibold tracking-wide text-white shadow-lg shadow-rose-950/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-rose-700/30 active:scale-95"
+          >
+            <i
+              class="fa-solid fa-rocket transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
+            ></i>
+            View Projects
+            <i
+              class="fa-solid fa-arrow-right text-sm transition-transform duration-300 group-hover:translate-x-1"
+            ></i>
+          </a>
+
+          <a
+            href="#about"
+            class="group inline-flex items-center gap-3 rounded-xl border border-rose-700/70 bg-black/40 px-7 py-3.5 font-semibold tracking-wide text-white backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-rose-500 hover:bg-rose-950/30 active:scale-95"
+          >
+            <i
+              class="fa-regular fa-circle-play text-rose-500 transition-transform duration-300 group-hover:scale-110"
+            ></i>
+            About Me
+          </a>
         </div>
-    </section>
+        <div class="flex items-center gap-4">
+          <a
+            href="https://github.com/aymanechoukri"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            class="text-2xl text-white hover:text-[#E5092A] transition-all duration-300 hover:scale-110"
+          >
+            <i class="fa-brands fa-github"></i>
+          </a>
 
-    <section data-aos="fade-up" id="profile" class="hero-background bg-[url('./public/image/background-hero.png')] bg-cover bg-center bg-no-repeat min-h-screen flex gap-10">
-        <article class="flex flex-col gap-6 justify-end h-[88vh] ml-[150px] w-[60%] clac-animation">
-            <h1 class="text-white text-8xl font-bold">AYMANE <span class="text-red-600">CHOKRI |</span></h1>
-            <p class="text-white text-5xl font-bold">Full-Stack Developer</p>
-            <p class="font-bold text-gray-500">I build modern, performant and user-centered web<br>application, from idea to deployment</p>
-            <div class="flex flex-wrap items-center gap-4">
+          <a
+            href="https://www.linkedin.com/in/aymane-chokri-8750a6321/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            class="text-2xl text-white hover:text-[#E5092A] transition-all duration-300 hover:scale-110"
+          >
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+        </div>
+      </article>
+      <article class="flex items-end">
+        <div class="z-[999] intro-left">
+          <img
+            src="./public/image/me.png"
+            loading="lazy"
+            alt="me"
+            class="w-[1300px]"
+          />
+        </div>
 
-                <a href="#projects"
-                class="group inline-flex items-center gap-3 rounded-xl
-                        bg-gradient-to-r from-rose-700 to-rose-950
-                        px-7 py-3.5 font-semibold tracking-wide text-white
-                        shadow-lg shadow-rose-950/40
-                        transition-all duration-300
-                        hover:-translate-y-1 hover:shadow-rose-700/30
-                        active:scale-95">
-
-                    <i class="fa-solid fa-rocket transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"></i>
-                    View Projects
-                    <i class="fa-solid fa-arrow-right text-sm transition-transform duration-300 group-hover:translate-x-1"></i>
-                </a>
-
-                <a href="#about"
-                class="group inline-flex items-center gap-3 rounded-xl
-                        border border-rose-700/70 bg-black/40
-                        px-7 py-3.5 font-semibold tracking-wide text-white
-                        backdrop-blur-md
-                        transition-all duration-300
-                        hover:-translate-y-1 hover:border-rose-500 hover:bg-rose-950/30
-                        active:scale-95">
-
-                    <i class="fa-regular fa-circle-play text-rose-500 transition-transform duration-300 group-hover:scale-110"></i>
-                    About Me
-                </a>
-
-            </div>
-            <div class="flex items-center gap-4">
-                <a
-                    href="https://github.com/aymanechoukri"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="GitHub"
-                    class="text-2xl text-white hover:text-[#E5092A] transition-all duration-300 hover:scale-110"
-                >
-                    <i class="fa-brands fa-github"></i>
-                </a>
-
-                <a
-                    href="https://www.linkedin.com/in/aymane-chokri-8750a6321/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="LinkedIn"
-                    class="text-2xl text-white hover:text-[#E5092A] transition-all duration-300 hover:scale-110"
-                >
-                    <i class="fa-brands fa-linkedin"></i>
-                </a>
-            </div>
-        </article>
-        <article class="flex items-end">
-            <div class="z-[999] intro-left">
-                <img src="./public/image/me.png" loading="lazy" alt="me" class="w-[1300px]">
-            </div>
-
-            <div class="absolute right-[400px] intro-right">
-                <img src="./public/image/robo.png" loading="lazy" alt="robo" class="w-[800px]">
-            </div>
-        </article>
+        <div class="absolute right-[400px] intro-right">
+          <img
+            src="./public/image/robo.png"
+            loading="lazy"
+            alt="robo"
+            class="w-[800px]"
+          />
+        </div>
+      </article>
     </section>
 
     <div class="h-[5vh]"></div>
 
-    <section data-aos="fade-up" id="projects" class="hero-background p-20 flex flex-col gap-10">
-        <article class="flex items-center justify-between gap-3">
-            <h2 class="flex items-center gap-3 text-4xl font-bold uppercase tracking-wider text-black">
-                <i class="fa-solid fa-code text-rose-500"></i>
-                <span><span class="text-rose-500">My</span> Projects</span>
-            </h2>
-
-            
-            <div class="flex flex-col gap-4 sm:flex-row">
-
-                <div class="relative flex-1">
-                    <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-rose-500"></i>
-
-                    <input
-                        type="search"
-                        name="search"
-                        id="search"
-                        placeholder="Search projects..."
-                        class="w-full rounded-xl border border-rose-200 bg-white py-3 pl-11 pr-4 text-sm text-black outline-none transition-all duration-300 placeholder:text-gray-400 focus:border-rose-500 focus:ring-2 focus:ring-rose-500/20"
-                    >
-                </div>
-
-                <div class="relative sm:w-52">
-                    <select
-                        name="category"
-                        id="category"
-                        class="w-full cursor-pointer appearance-none rounded-xl border border-rose-200 bg-white px-4 py-3 text-sm text-gray-700 outline-none transition-all duration-300 focus:border-rose-500 focus:ring-2 focus:ring-rose-500/20"
-                    >
-                        <option value="All">All Projects</option>
-                        <option value="Frontend Project">Frontend</option>
-                        <option value="Backend Project">Backend</option>
-                        <option value="Full-Stack Project">Full Stack</option>
-                    </select>
-
-                    <i class="fa-solid fa-chevron-down pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-xs text-rose-500"></i>
-                </div>
-
-            </div>
-
-        </article>
-
-        <div id="group" class="grid place-items-center grid-cols-3 gap-3"></div>
-    </section>
-
-    <div class="h-[5vh]"></div>
-
-    <section data-aos="fade-up" id="about" class="p-20 flex gap-6 relative overflow-hidden rounded-3xl">
-        <article data-aos="fade-right" class="relative overflow-hidden rounded-3xl border border-rose-900/40 bg-gradient-to-br from-[#160609] via-[#100406] to-black p-6 shadow-2xl shadow-rose-950/20 md:p-10">
-
-            <div class="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-rose-600/10 blur-[100px]"></div>
-
-            <section class="relative mb-12">
-                <h2 class="mb-6 flex items-center gap-3 text-2xl font-bold uppercase tracking-wider text-white md:text-3xl">
-                    <i class="fa-solid fa-user text-rose-500"></i>
-                    <span>About Me</span>
-                </h2>
-
-                <div class="rounded-2xl border border-rose-900/30 bg-white/[0.03] p-5 md:p-7">
-                    <p class="text-sm leading-8 text-gray-300 md:text-base">
-                        I'm a passionate <span class="font-semibold text-rose-400">Full-Stack Web Developer</span>
-                        focused on building modern, responsive, and user-friendly web applications.
-                        I enjoy transforming ideas into functional digital experiences through clean code,
-                        thoughtful design, and problem-solving.
-
-                        <br><br>
-
-                        My journey involves working with modern frontend technologies and backend
-                        development, building real-world projects, integrating REST APIs, and
-                        managing databases. I'm continuously learning, improving my skills,
-                        and exploring new technologies to become a better developer.
-                    </p>
-                </div>
-            </section>
-
-            <section class="relative">
-                <h2 class="mb-6 flex items-center gap-3 text-2xl font-bold uppercase tracking-wider text-white md:text-3xl">
-                    <i class="fa-solid fa-code text-rose-500"></i>
-                    <span>Skills & Technologies</span>
-                </h2>
-
-                <div class="grid gap-5 sm:grid-cols-2">
-
-                    <div class="rounded-2xl border border-rose-900/30 bg-white/[0.03] p-5 transition-all duration-300 hover:border-rose-600/50">
-                        <h3 class="mb-4 flex items-center gap-2 font-semibold text-rose-400">
-                            <i class="fa-solid fa-laptop-code"></i>
-                            Frontend Development
-                        </h3>
-
-                        <div class="flex flex-wrap gap-2">
-                            <span class="skill-tag">HTML5</span>
-                            <span class="skill-tag">CSS3</span>
-                            <span class="skill-tag">JavaScript</span>
-                            <span class="skill-tag">React.js</span>
-                            <span class="skill-tag">React Router</span>
-                            <span class="skill-tag">Tailwind CSS</span>
-                            <span class="skill-tag">TypeScript</span>
-                            <span class="skill-tag">Vite</span>
-                            <span class="skill-tag">Responsive Design</span>
-                        </div>
-                    </div>
-
-                    <div class="rounded-2xl border border-rose-900/30 bg-white/[0.03] p-5 transition-all duration-300 hover:border-rose-600/50">
-                        <h3 class="mb-4 flex items-center gap-2 font-semibold text-rose-400">
-                            <i class="fa-solid fa-server"></i>
-                            Backend Development
-                        </h3>
-
-                        <div class="flex flex-wrap gap-2">
-                            <span class="skill-tag">Node.js</span>
-                            <span class="skill-tag">Express.js</span>
-                            <span class="skill-tag">PHP</span>
-                            <span class="skill-tag">Laravel</span>
-                            <span class="skill-tag">REST APIs</span>
-                            <span class="skill-tag">JWT</span>
-                        </div>
-                    </div>
-
-                    <div class="rounded-2xl border border-rose-900/30 bg-white/[0.03] p-5 transition-all duration-300 hover:border-rose-600/50">
-                        <h3 class="mb-4 flex items-center gap-2 font-semibold text-rose-400">
-                            <i class="fa-solid fa-database"></i>
-                            Database
-                        </h3>
-
-                        <div class="flex flex-wrap gap-2">
-                            <span class="skill-tag">MongoDB</span>
-                            <span class="skill-tag">MySQL</span>
-                            <span class="skill-tag">SQL</span>
-                            <span class="skill-tag">Mongoose</span>
-                        </div>
-                    </div>
-
-                    <div class="rounded-2xl border border-rose-900/30 bg-white/[0.03] p-5 transition-all duration-300 hover:border-rose-600/50">
-                        <h3 class="mb-4 flex items-center gap-2 font-semibold text-rose-400">
-                            <i class="fa-solid fa-toolbox"></i>
-                            Tools & Workflow
-                        </h3>
-
-                        <div class="flex flex-wrap gap-2">
-                            <span class="skill-tag">Git</span>
-                            <span class="skill-tag">GitHub</span>
-                            <span class="skill-tag">Figma</span>
-                            <span class="skill-tag">Jira</span>
-                            <span class="skill-tag">VS Code</span>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-        </article>
-
-         <article data-aos="fade-left" class="group relative w-full max-w-[550px] overflow-hidden rounded-3xl border border-rose-900/40 bg-gradient-to-br from-[#160609] to-black p-3 shadow-2xl shadow-rose-950/30 transition-all duration-500 hover:-translate-y-2 hover:border-rose-600/60 hover:shadow-rose-900/40">
-
-            <div class="relative overflow-hidden rounded-2xl">
-                <img
-                    src="./public/image/img-about.png"
-                    alt="About Me"
-                    loading="lazy"
-                    class="h-auto w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                >
-
-                <div class="absolute inset-0 bg-gradient-to-t from-[#100406]/50 via-transparent to-transparent"></div>
-            </div>
-
-        </article>
-
-    </section>
-
-    <div class="h-[5vh]"></div>
-
-    <section data-aos="fade-up" id="contact" class="p-20 bg-[url('./public/image/Android.png')] bg-cover bg-no-repeat bg-center min-h-screen background2 grid grid-cols-2 gap-6">
-        
-        <article class="flex items-end ml-[130px]">
-            <nav data-aos="fade-left" class="rounded-2xl border border-rose-900/40 bg-gradient-to-br from-[#160609] via-[#100406] to-black p-3 shadow-xl shadow-rose-950/30">
-                <ul class="flex items-center gap-3">
-
-                    <li>
-                        <a href="https://github.com/aymanechoukri"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="group flex items-center gap-2 rounded-xl border border-transparent px-5 py-3 text-sm font-semibold text-gray-400 transition-all duration-300 hover:border-rose-600/40 hover:bg-rose-950/30 hover:text-rose-400 hover:shadow-lg hover:shadow-rose-950/30">
-                            <i class="fa-brands fa-github text-lg"></i>
-                            GitHub
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="https://www.linkedin.com/in/aymane-chokri-8750a6321/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="flex items-center gap-2 rounded-xl border border-transparent px-5 py-3 text-sm font-semibold text-gray-400 transition-all duration-300 hover:border-rose-600/40 hover:bg-rose-950/30 hover:text-rose-400 hover:shadow-lg hover:shadow-rose-950/30">
-                            <i class="fa-brands fa-linkedin text-lg"></i>
-                            LinkedIn
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="mailto:aymanechokri2000@gmail.com"
-                        class="flex items-center gap-2 rounded-xl border border-transparent px-5 py-3 text-sm font-semibold text-gray-400 transition-all duration-300 hover:border-rose-600/40 hover:bg-rose-950/30 hover:text-rose-400 hover:shadow-lg hover:shadow-rose-950/30">
-                            <i class="fa-solid fa-envelope text-lg"></i>
-                            Email
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="tel:+212714063566"
-                        class="flex items-center gap-2 rounded-xl border border-transparent px-5 py-3 text-sm font-semibold text-gray-400 transition-all duration-300 hover:border-rose-600/40 hover:bg-rose-950/30 hover:text-rose-400 hover:shadow-lg hover:shadow-rose-950/30">
-                            <i class="fa-solid fa-phone text-lg"></i>
-                            Number
-                        </a>
-                    </li>
-
-                </ul>
-            </nav>
-        </article>
-
-
-        <form
-            action="https://formspree.io/f/mqpqozgd"
-            method="POST"
-            id="submit"
-            data-aos="fade-right"
-            class="mt-[200px] flex flex-col gap-6 rounded-3xl border-2 border-rose-950/20 bg-black/50 p-6 shadow-2xl shadow-rose-700/30 backdrop-blur-[5px] md:p-8"
+    <section
+      data-aos="fade-up"
+      id="projects"
+      class="hero-background p-20 flex flex-col gap-10"
+    >
+      <article class="flex items-center justify-between gap-3">
+        <h2
+          class="flex items-center gap-3 text-4xl font-bold uppercase tracking-wider text-black"
         >
-            <h2 class="mb-2 flex items-center gap-3 text-2xl font-bold uppercase tracking-wider text-white md:text-3xl">
-                <i class="fa-solid fa-envelope text-rose-500"></i>
-                <span>Contact Me</span>
-            </h2>
+          <i class="fa-solid fa-code text-rose-500"></i>
+          <span><span class="text-rose-500">My</span> Projects</span>
+        </h2>
 
-            <div class="flex flex-col gap-3">
-                <label for="fullName" class="text-sm font-semibold text-rose-100">
-                    Full Name
-                </label>
-                <input
-                    type="text"
-                    name="fullName"
-                    id="fullName"
-                    placeholder="Enter your full name"
-                    class="rounded-xl border-b-2 border-rose-600 bg-transparent px-5 py-4 text-white outline-none transition-all duration-500 placeholder:text-gray-500 focus:border-rose-400 focus:shadow-lg focus:shadow-rose-700/30"
-                    required
-                >
-            </div>
+        <div class="flex flex-col gap-4 sm:flex-row">
+          <div class="relative flex-1">
+            <i
+              class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-rose-500"
+            ></i>
 
-            <div class="flex flex-col gap-3">
-                <label for="email" class="text-sm font-semibold text-rose-100">
-                    Email Address
-                </label>
-                <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    placeholder="example@email.com"
-                    class="rounded-xl border-b-2 border-rose-600 bg-transparent px-5 py-4 text-white outline-none transition-all duration-500 placeholder:text-gray-500 focus:border-rose-400 focus:shadow-lg focus:shadow-rose-700/30"
-                    required
-                >
-            </div>
+            <input
+              type="search"
+              name="search"
+              id="search"
+              placeholder="Search projects..."
+              class="w-full rounded-xl border border-rose-200 bg-white py-3 pl-11 pr-4 text-sm text-black outline-none transition-all duration-300 placeholder:text-gray-400 focus:border-rose-500 focus:ring-2 focus:ring-rose-500/20"
+            />
+          </div>
 
-            <div class="flex flex-col gap-3">
-                <label for="message" class="text-sm font-semibold text-rose-100">
-                    Message
-                </label>
-                <textarea
-                    name="message"
-                    id="message"
-                    rows="5"
-                    placeholder="Write your message here..."
-                    class="resize-none rounded-xl border-b-2 border-rose-600 bg-transparent px-5 py-4 text-white outline-none transition-all duration-500 placeholder:text-gray-500 focus:border-rose-400 focus:shadow-lg focus:shadow-rose-700/30"
-                    required
-                ></textarea>
-            </div>
-
-            <button
-                type="submit"
-                class="mt-2 flex items-center justify-center gap-3 rounded-xl bg-rose-700 px-6 py-4 font-bold uppercase tracking-wider text-white shadow-lg shadow-rose-700/30 transition-all duration-300 hover:-translate-y-1 hover:bg-rose-600 hover:shadow-rose-600/50 active:translate-y-0"
+          <div class="relative sm:w-52">
+            <select
+              name="category"
+              id="category"
+              class="w-full cursor-pointer appearance-none rounded-xl border border-rose-200 bg-white px-4 py-3 text-sm text-gray-700 outline-none transition-all duration-300 focus:border-rose-500 focus:ring-2 focus:ring-rose-500/20"
             >
-                <span>Send Message</span>
-                <i class="fa-solid fa-paper-plane"></i>
-            </button>
-        </form>
+              <option value="All">All Projects</option>
+              <option value="Frontend Project">Frontend</option>
+              <option value="Backend Project">Backend</option>
+              <option value="Full-Stack Project">Full Stack</option>
+            </select>
 
+            <i
+              class="fa-solid fa-chevron-down pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-xs text-rose-500"
+            ></i>
+          </div>
+        </div>
+      </article>
+
+      <div id="group" class="grid place-items-center grid-cols-3 gap-3"></div>
     </section>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js">
-</script>
-<script src="https://unpkg.com/lenis@1.3.11/dist/lenis.min.js"></script>
-</body>
+
+    <div class="h-[5vh]"></div>
+
+    <section
+      data-aos="fade-up"
+      id="about"
+      class="p-20 flex gap-6 relative overflow-hidden rounded-3xl"
+    >
+      <article
+        data-aos="fade-right"
+        class="relative overflow-hidden rounded-3xl border border-rose-900/40 bg-gradient-to-br from-[#160609] via-[#100406] to-black p-6 shadow-2xl shadow-rose-950/20 md:p-10"
+      >
+        <div
+          class="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-rose-600/10 blur-[100px]"
+        ></div>
+
+        <section class="relative mb-12">
+          <h2
+            class="mb-6 flex items-center gap-3 text-2xl font-bold uppercase tracking-wider text-white md:text-3xl"
+          >
+            <i class="fa-solid fa-user text-rose-500"></i>
+            <span>About Me</span>
+          </h2>
+
+          <div
+            class="rounded-2xl border border-rose-900/30 bg-white/[0.03] p-5 md:p-7"
+          >
+            <p class="text-sm leading-8 text-gray-300 md:text-base">
+              I'm a passionate
+              <span class="font-semibold text-rose-400"
+                >Full-Stack Web Developer</span
+              >
+              focused on building modern, responsive, and user-friendly web
+              applications. I enjoy transforming ideas into functional digital
+              experiences through clean code, thoughtful design, and
+              problem-solving.
+
+              <br /><br />
+
+              My journey involves working with modern frontend technologies and
+              backend development, building real-world projects, integrating
+              REST APIs, and managing databases. I'm continuously learning,
+              improving my skills, and exploring new technologies to become a
+              better developer.
+            </p>
+          </div>
+        </section>
+
+        <section class="relative">
+          <h2
+            class="mb-6 flex items-center gap-3 text-2xl font-bold uppercase tracking-wider text-white md:text-3xl"
+          >
+            <i class="fa-solid fa-code text-rose-500"></i>
+            <span>Skills & Technologies</span>
+          </h2>
+
+          <div class="grid gap-5 sm:grid-cols-2">
+            <div
+              class="rounded-2xl border border-rose-900/30 bg-white/[0.03] p-5 transition-all duration-300 hover:border-rose-600/50"
+            >
+              <h3
+                class="mb-4 flex items-center gap-2 font-semibold text-rose-400"
+              >
+                <i class="fa-solid fa-laptop-code"></i>
+                Frontend Development
+              </h3>
+
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-tag">HTML5</span>
+                <span class="skill-tag">CSS3</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">React.js</span>
+                <span class="skill-tag">React Router</span>
+                <span class="skill-tag">Tailwind CSS</span>
+                <span class="skill-tag">TypeScript</span>
+                <span class="skill-tag">Vite</span>
+                <span class="skill-tag">Responsive Design</span>
+              </div>
+            </div>
+
+            <div
+              class="rounded-2xl border border-rose-900/30 bg-white/[0.03] p-5 transition-all duration-300 hover:border-rose-600/50"
+            >
+              <h3
+                class="mb-4 flex items-center gap-2 font-semibold text-rose-400"
+              >
+                <i class="fa-solid fa-server"></i>
+                Backend Development
+              </h3>
+
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">Express.js</span>
+                <span class="skill-tag">PHP</span>
+                <span class="skill-tag">Laravel</span>
+                <span class="skill-tag">REST APIs</span>
+                <span class="skill-tag">JWT</span>
+              </div>
+            </div>
+
+            <div
+              class="rounded-2xl border border-rose-900/30 bg-white/[0.03] p-5 transition-all duration-300 hover:border-rose-600/50"
+            >
+              <h3
+                class="mb-4 flex items-center gap-2 font-semibold text-rose-400"
+              >
+                <i class="fa-solid fa-database"></i>
+                Database
+              </h3>
+
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-tag">MongoDB</span>
+                <span class="skill-tag">MySQL</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">Mongoose</span>
+              </div>
+            </div>
+
+            <div
+              class="rounded-2xl border border-rose-900/30 bg-white/[0.03] p-5 transition-all duration-300 hover:border-rose-600/50"
+            >
+              <h3
+                class="mb-4 flex items-center gap-2 font-semibold text-rose-400"
+              >
+                <i class="fa-solid fa-toolbox"></i>
+                Tools & Workflow
+              </h3>
+
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">GitHub</span>
+                <span class="skill-tag">Figma</span>
+                <span class="skill-tag">Jira</span>
+                <span class="skill-tag">VS Code</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
+
+      <article
+        data-aos="fade-left"
+        class="group relative w-full max-w-[550px] overflow-hidden rounded-3xl border border-rose-900/40 bg-gradient-to-br from-[#160609] to-black p-3 shadow-2xl shadow-rose-950/30 transition-all duration-500 hover:-translate-y-2 hover:border-rose-600/60 hover:shadow-rose-900/40"
+      >
+        <div class="relative overflow-hidden rounded-2xl">
+          <img
+            src="./public/image/img-about.png"
+            alt="About Me"
+            loading="lazy"
+            class="h-auto w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-[#100406]/50 via-transparent to-transparent"
+          ></div>
+        </div>
+      </article>
+    </section>
+
+    <div class="h-[5vh]"></div>
+
+    <section
+      data-aos="fade-up"
+      id="contact"
+      class="p-20 bg-[url('./public/image/Android.png')] bg-cover bg-no-repeat bg-center min-h-screen background2 grid grid-cols-2 gap-6"
+    >
+      <article class="flex items-end ml-[130px]">
+        <nav
+          data-aos="fade-left"
+          class="rounded-2xl border border-rose-900/40 bg-gradient-to-br from-[#160609] via-[#100406] to-black p-3 shadow-xl shadow-rose-950/30"
+        >
+          <ul class="flex items-center gap-3">
+            <li>
+              <a
+                href="https://github.com/aymanechoukri"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group flex items-center gap-2 rounded-xl border border-transparent px-5 py-3 text-sm font-semibold text-gray-400 transition-all duration-300 hover:border-rose-600/40 hover:bg-rose-950/30 hover:text-rose-400 hover:shadow-lg hover:shadow-rose-950/30"
+              >
+                <i class="fa-brands fa-github text-lg"></i>
+                GitHub
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="https://www.linkedin.com/in/aymane-chokri-8750a6321/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-2 rounded-xl border border-transparent px-5 py-3 text-sm font-semibold text-gray-400 transition-all duration-300 hover:border-rose-600/40 hover:bg-rose-950/30 hover:text-rose-400 hover:shadow-lg hover:shadow-rose-950/30"
+              >
+                <i class="fa-brands fa-linkedin text-lg"></i>
+                LinkedIn
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="mailto:aymanechokri2000@gmail.com"
+                class="flex items-center gap-2 rounded-xl border border-transparent px-5 py-3 text-sm font-semibold text-gray-400 transition-all duration-300 hover:border-rose-600/40 hover:bg-rose-950/30 hover:text-rose-400 hover:shadow-lg hover:shadow-rose-950/30"
+              >
+                <i class="fa-solid fa-envelope text-lg"></i>
+                Email
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="tel:+212714063566"
+                class="flex items-center gap-2 rounded-xl border border-transparent px-5 py-3 text-sm font-semibold text-gray-400 transition-all duration-300 hover:border-rose-600/40 hover:bg-rose-950/30 hover:text-rose-400 hover:shadow-lg hover:shadow-rose-950/30"
+              >
+                <i class="fa-solid fa-phone text-lg"></i>
+                Number
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </article>
+
+      <form
+        action="https://formspree.io/f/mqpqozgd"
+        method="POST"
+        id="submit"
+        data-aos="fade-right"
+        class="mt-[200px] flex flex-col gap-6 rounded-3xl border-2 border-rose-950/20 bg-black/50 p-6 shadow-2xl shadow-rose-700/30 backdrop-blur-[5px] md:p-8"
+      >
+        <h2
+          class="mb-2 flex items-center gap-3 text-2xl font-bold uppercase tracking-wider text-white md:text-3xl"
+        >
+          <i class="fa-solid fa-envelope text-rose-500"></i>
+          <span>Contact Me</span>
+        </h2>
+
+        <div class="flex flex-col gap-3">
+          <label for="fullName" class="text-sm font-semibold text-rose-100">
+            Full Name
+          </label>
+          <input
+            type="text"
+            name="fullName"
+            id="fullName"
+            placeholder="Enter your full name"
+            class="rounded-xl border-b-2 border-rose-600 bg-transparent px-5 py-4 text-white outline-none transition-all duration-500 placeholder:text-gray-500 focus:border-rose-400 focus:shadow-lg focus:shadow-rose-700/30"
+            required
+          />
+        </div>
+
+        <div class="flex flex-col gap-3">
+          <label for="email" class="text-sm font-semibold text-rose-100">
+            Email Address
+          </label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="example@email.com"
+            class="rounded-xl border-b-2 border-rose-600 bg-transparent px-5 py-4 text-white outline-none transition-all duration-500 placeholder:text-gray-500 focus:border-rose-400 focus:shadow-lg focus:shadow-rose-700/30"
+            required
+          />
+        </div>
+
+        <div class="flex flex-col gap-3">
+          <label for="message" class="text-sm font-semibold text-rose-100">
+            Message
+          </label>
+          <textarea
+            name="message"
+            id="message"
+            rows="5"
+            placeholder="Write your message here..."
+            class="resize-none rounded-xl border-b-2 border-rose-600 bg-transparent px-5 py-4 text-white outline-none transition-all duration-500 placeholder:text-gray-500 focus:border-rose-400 focus:shadow-lg focus:shadow-rose-700/30"
+            required
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="mt-2 flex items-center justify-center gap-3 rounded-xl bg-rose-700 px-6 py-4 font-bold uppercase tracking-wider text-white shadow-lg shadow-rose-700/30 transition-all duration-300 hover:-translate-y-1 hover:bg-rose-600 hover:shadow-rose-600/50 active:translate-y-0"
+        >
+          <span>Send Message</span>
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </form>
+    </section>
+
+    <footer
+      class="relative isolate overflow-hidden border-t border-rose-900/30 bg-gradient-to-b from-[#160609] via-[#100406] to-black text-white"
+    >
+      <div
+        class="pointer-events-none absolute -top-40 left-1/4 h-80 w-80 rounded-full bg-rose-600/10 blur-[120px]"
+      ></div>
+      <div
+        class="pointer-events-none absolute -top-20 right-0 h-72 w-72 rounded-full bg-[#E5092A]/10 blur-[120px]"
+      ></div>
+
+      <div
+        class="relative z-10 mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-20 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10"
+      >
+        <div class="flex flex-col gap-5 lg:col-span-1">
+          <a href="#profile" class="flex items-center gap-4">
+            <i
+              class="fa-solid fa-code text-5xl text-rose-600 drop-shadow-[0_0_15px_rgba(225,29,72,0.6)]"
+            ></i>
+            <div>
+              <h2 class="text-2xl font-extrabold">
+                Aymane <span class="text-rose-600">Chokri</span>
+              </h2>
+              <p class="mt-1 text-sm text-gray-400">Full-Stack Developer</p>
+            </div>
+          </a>
+
+          <p class="max-w-sm leading-7 text-gray-400">
+            I build modern, performant, and user-friendly web applications from
+            idea to deployment.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="mb-6 text-xl font-bold">Quick Links</h3>
+          <div
+            class="mb-7 h-1 w-16 rounded-full bg-rose-600 shadow-[0_0_12px_#E5092A]"
+          ></div>
+
+          <ul class="flex flex-col gap-4 text-gray-400">
+            <li>
+              <a
+                href="#profile"
+                class="flex items-center gap-3 transition hover:translate-x-2 hover:text-rose-500"
+                ><i class="fa-solid fa-chevron-right text-xs text-rose-600"></i>
+                Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="#about"
+                class="flex items-center gap-3 transition hover:translate-x-2 hover:text-rose-500"
+                ><i class="fa-solid fa-chevron-right text-xs text-rose-600"></i>
+                About</a
+              >
+            </li>
+            <li>
+              <a
+                href="#projects"
+                class="flex items-center gap-3 transition hover:translate-x-2 hover:text-rose-500"
+                ><i class="fa-solid fa-chevron-right text-xs text-rose-600"></i>
+                Projects</a
+              >
+            </li>
+            <li>
+              <a
+                href="#contact"
+                class="flex items-center gap-3 transition hover:translate-x-2 hover:text-rose-500"
+                ><i class="fa-solid fa-chevron-right text-xs text-rose-600"></i>
+                Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="mb-6 text-xl font-bold">Get in Touch</h3>
+          <div
+            class="mb-7 h-1 w-16 rounded-full bg-rose-600 shadow-[0_0_12px_#E5092A]"
+          ></div>
+
+          <ul class="flex flex-col gap-6 text-gray-400">
+            <li>
+              <a
+                href="mailto:aymanechokri2000@gmail.com"
+                class="flex items-start gap-4 transition hover:text-rose-500"
+              >
+                <i class="fa-solid fa-envelope mt-1 text-xl text-rose-600"></i>
+                <span class="break-all">aymanechokri2000@gmail.com</span>
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="tel:0714063566"
+                class="flex items-center gap-4 transition hover:text-rose-500"
+              >
+                <i class="fa-solid fa-phone text-xl text-rose-600"></i>
+                <span>0714063566</span>
+              </a>
+            </li>
+
+            <li class="flex items-center gap-4">
+              <i class="fa-solid fa-location-dot text-xl text-rose-600"></i>
+              <span>safi, Morocco</span>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="mb-6 text-xl font-bold">Follow Me</h3>
+          <div
+            class="mb-7 h-1 w-16 rounded-full bg-rose-600 shadow-[0_0_12px_#E5092A]"
+          ></div>
+
+          <div class="flex flex-wrap gap-3">
+            <a
+              href="https://github.com/aymanechoukri"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              class="flex h-14 w-14 items-center justify-center rounded-xl border border-rose-800/50 bg-rose-950/10 text-2xl text-rose-400 transition duration-300 hover:-translate-y-2 hover:border-rose-500 hover:bg-rose-600 hover:text-white hover:shadow-[0_0_20px_rgba(225,29,72,0.4)]"
+            >
+              <i class="fa-brands fa-github"></i>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/aymane-chokri-8750a6321/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              class="flex h-14 w-14 items-center justify-center rounded-xl border border-rose-800/50 bg-rose-950/10 text-2xl text-rose-400 transition duration-300 hover:-translate-y-2 hover:border-rose-500 hover:bg-rose-600 hover:text-white hover:shadow-[0_0_20px_rgba(225,29,72,0.4)]"
+            >
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="relative z-10 border-t border-rose-900/30">
+        <div
+          class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 px-6 py-7 text-center md:flex-row"
+        >
+          <p class="text-sm text-gray-500">
+            © 2026 Aymane Chokri. All rights reserved.
+          </p>
+
+          <a
+            href="#profile"
+            aria-label="Back to top"
+            class="group flex items-center gap-3 text-rose-500 transition hover:text-rose-400"
+          >
+            <span
+              class="h-px w-10 bg-rose-700 transition group-hover:w-16"
+            ></span>
+            <i class="fa-solid fa-code text-2xl"></i>
+            <span
+              class="h-px w-10 bg-rose-700 transition group-hover:w-16"
+            ></span>
+          </a>
+
+          <p class="text-sm text-gray-500">
+            Built with
+            <i class="fa-solid fa-heart animate-pulse text-rose-600"></i> by
+            <span class="font-semibold text-rose-500">Aymane Chokri</span>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <script src="https://unpkg.com/lenis@1.3.11/dist/lenis.min.js"></script>
+  </body>
 </html>
