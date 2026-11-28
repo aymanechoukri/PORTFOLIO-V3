@@ -2,192 +2,165 @@ import { closeMenu, opneMenu } from "./burgerMenu.js";
 import { renderProjects, searchAndFliter } from "./prijects.js";
 import { validationForm } from "./validation.js";
 
-AOS.init({
-    once: true,
-    duration: 900
-});
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-const lenis = new Lenis({
-    duration: 1.2,
-    smoothWheel: true,
-    wheelMultiplier: 0.8,
-});
+if (window.AOS) {
+    AOS.init({ once: true, duration: prefersReducedMotion ? 0 : 900, offset: 80 });
+}
 
-function raf(time) {
-    lenis.raf(time);
+if (window.Lenis && !prefersReducedMotion) {
+    const lenis = new Lenis({ duration: 1.2, smoothWheel: true, wheelMultiplier: 0.8 });
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
     requestAnimationFrame(raf);
 }
 
-requestAnimationFrame(raf);
-
-
-const menu = document.querySelector("#menu")
-const close = document.querySelector("#close")
-const opne = document.querySelector("#opne");
+const menu = document.querySelector("#menu");
+const closeButton = document.querySelector("#close");
+const openButton = document.querySelector("#opne");
 const introBackground = document.querySelector(".intro-background");
-const group = document.querySelector("#group");
+const projectGroup = document.querySelector("#group");
+const searchInput = document.querySelector("#search");
+const categorySelect = document.querySelector("#category");
+const contactForm = document.querySelector("#submit");
+const header = document.querySelector("header");
 
-const search = document.querySelector("#search");
-const category = document.querySelector("#category");
+if (openButton && menu) openButton.addEventListener("click", () => opneMenu(menu));
+if (closeButton && menu) closeButton.addEventListener("click", () => closeMenu(menu));
 
-const fullName = document.querySelector("#fullName");
-const email = document.querySelector("#email");
-const message = document.querySelector("#message");
-const submit = document.querySelector("#submit");
+if (introBackground) {
+    window.setTimeout(() => {
+        introBackground.remove();
+        document.body.style.overflow = "";
+    }, 5000);
+}
 
-
-opne.addEventListener("click", () => {
-    opneMenu(menu)
-});
-close.addEventListener("click", () => {
-    closeMenu(menu)
-});
-
-document.body.style.overflowX = "hidden";
-setTimeout(() => {
-    document.body.style.overflow = "auto";
-    introBackground.style.display = "none";
-}, 5000);
-
-group.append(renderProjects());
+if (projectGroup) {
+    projectGroup.append(renderProjects());
+    window.AOS?.refreshHard();
+}
 
 let searchValue = "";
 let categoryValue = "All";
 
-search.addEventListener("input", (e) => {
-    searchValue = e.target.value;
-    searchAndFliter(searchValue, categoryValue, group);
-})
-
-category.addEventListener("change", (e) => {
-    categoryValue = e.target.value;
-    searchAndFliter(searchValue, categoryValue, group);
-})
-
-
-let valueName = "";
-let valueEmail = "";
-let valueMessage = "";
-
-fullName.addEventListener("input", (e) => {
-    valueName = e.target.value;
-})
-
-email.addEventListener("input", (e) => {
-    valueEmail = e.target.value;
-})
-
-message.addEventListener("input", (e) => {
-    valueMessage = e.target.value;
-})
-
-submit.addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    const isValid = validationForm(valueName, valueEmail, valueMessage);
-    console.log(isValid)
-    if (!isValid) {
-        Toastify({
-            text: "Please check your inputs!",
-            duration: 3000,
-            gravity: "top",
-            position: "right",
-            style: {
-                background: "#E5092A",
-                borderRadius: "12px"
-            }
-        }).showToast();
-        return;
-    }
-
-
-    const res = await fetch(submit.action, {
-       method: "POST",
-       headers: {Accept: "application/json"},
-       body: new FormData(submit),
-    });
-
-    if (!res.ok) {
-         Toastify({
-            text: "Something went wrong. Try again!",
-            duration: 3000,
-            gravity: "top",
-            position: "right",
-            style: {
-                background: "#E5092A",
-                borderRadius: "12px"
-            }
-        }).showToast();
-        throw new Error("In Valid: ", res.status);
-    }
-     Toastify({
-                text: "Message sent successfully!",
-                duration: 3000,
-                gravity: "top",
-                position: "right",
-                style: {
-                    background: "#16A34A",
-                    borderRadius: "12px"
-                }
-            }).showToast();
-    submit.reset();
-})
-
-
-const cursor = document.querySelector(".cursor");
-const dot = document.querySelector(".cursor-dot");
-
-let mouseX = 0;
-let mouseY = 0;
-let cursorX = 0;
-let cursorY = 0;
-
-document.addEventListener("mousemove", (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-
-    dot.style.left = `${mouseX}px`;
-    dot.style.top = `${mouseY}px`;
-});
-
-function animateCursor() {
-    cursorX += (mouseX - cursorX) * 0.15;
-    cursorY += (mouseY - cursorY) * 0.15;
-
-    cursor.style.left = `${cursorX}px`;
-    cursor.style.top = `${cursorY}px`;
-
-    requestAnimationFrame(animateCursor);
+function updateProjects() {
+    if (!projectGroup) return;
+    searchAndFliter(searchValue, categoryValue, projectGroup);
+    window.AOS?.refreshHard();
 }
 
-animateCursor();
-
-document.querySelectorAll("a, button").forEach((element) => {
-    element.addEventListener("mouseenter", () => {
-        cursor.classList.add("active");
-    });
-
-    element.addEventListener("mouseleave", () => {
-        cursor.classList.remove("active");
-    });
+searchInput?.addEventListener("input", (event) => {
+    searchValue = event.target.value;
+    updateProjects();
 });
 
-const header = document.querySelector("header");
+categorySelect?.addEventListener("change", (event) => {
+    categoryValue = event.target.value;
+    updateProjects();
+});
 
-window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-        header.classList.add(
-            "bg-black/30",
-            "backdrop-blur-md",
-            "border-b",
-            "border-rose-900/30"
+function showToast(text, type = "error") {
+    if (!window.Toastify) return;
+    Toastify({
+        text,
+        duration: 3500,
+        gravity: "top",
+        position: "right",
+        close: true,
+        style: {
+            background: type === "success" ? "#16A34A" : "#E5092A",
+            borderRadius: "12px",
+        },
+    }).showToast();
+}
+
+if (contactForm) {
+    contactForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        if (!contactForm.reportValidity()) return;
+
+        const formData = new FormData(contactForm);
+        const isValid = validationForm(
+            String(formData.get("fullName") || ""),
+            String(formData.get("email") || ""),
+            String(formData.get("message") || "")
         );
-    } else {
-        header.classList.remove(
-            "bg-black/30",
-            "backdrop-blur-md",
-            "border-b",
-            "border-rose-900/30"
-        );
+
+        if (!isValid) {
+            showToast("Please check your name, email, and message.");
+            return;
+        }
+
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        const originalButtonContent = submitButton?.innerHTML;
+        if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+        }
+
+        try {
+            const response = await fetch(contactForm.action, {
+                method: "POST",
+                headers: { Accept: "application/json" },
+                body: formData,
+            });
+            if (!response.ok) throw new Error(`Form submission failed: ${response.status}`);
+
+            contactForm.reset();
+            showToast("Message sent successfully!", "success");
+        } catch (error) {
+            console.error("Contact form error:", error);
+            showToast("Unable to send your message. Please try again.");
+        } finally {
+            if (submitButton) {
+                submitButton.disabled = false;
+                submitButton.innerHTML = originalButtonContent;
+            }
+        }
+    });
+}
+
+const cursor = document.querySelector(".cursor");
+const cursorDot = document.querySelector(".cursor-dot");
+const hasFinePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+if (cursor && cursorDot && hasFinePointer) {
+    document.body.classList.add("has-custom-cursor");
+    let mouseX = 0, mouseY = 0, cursorX = 0, cursorY = 0;
+
+    document.addEventListener("mousemove", (event) => {
+        mouseX = event.clientX;
+        mouseY = event.clientY;
+        cursorDot.style.left = `${mouseX}px`;
+        cursorDot.style.top = `${mouseY}px`;
+    });
+
+    function animateCursor() {
+        cursorX += (mouseX - cursorX) * 0.15;
+        cursorY += (mouseY - cursorY) * 0.15;
+        cursor.style.left = `${cursorX}px`;
+        cursor.style.top = `${cursorY}px`;
+        requestAnimationFrame(animateCursor);
     }
-});
+    animateCursor();
+
+    document.addEventListener("pointerover", (event) => {
+        if (event.target.closest("a, button, input, textarea, select")) cursor.classList.add("active");
+    });
+    document.addEventListener("pointerout", (event) => {
+        if (event.target.closest("a, button, input, textarea, select")) cursor.classList.remove("active");
+    });
+}
+
+function updateHeader() {
+    if (!header) return;
+    const isScrolled = window.scrollY > 50;
+    header.classList.toggle("bg-black/30", isScrolled);
+    header.classList.toggle("backdrop-blur-md", isScrolled);
+    header.classList.toggle("border-b", isScrolled);
+    header.classList.toggle("border-rose-900/30", isScrolled);
+}
+window.addEventListener("scroll", updateHeader, { passive: true });
+updateHeader();
