@@ -208,9 +208,21 @@ footer {
         padding: 4rem 2rem;
     }
 
+    #group {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.25rem;
+    }
+
     #about {
         padding: 4rem 2rem;
         align-items: stretch;
+        flex-wrap: wrap;
+    }
+
+    #about > article:first-child,
+    #about > article:last-child {
+        width: 100%;
+        max-width: none;
     }
 
     #contact {
